@@ -14,18 +14,19 @@ function Hero() {
         >
           <div className="inline-flex items-center gap-3 rounded-full border border-brand/20 bg-white/5 px-4 py-2 text-sm uppercase tracking-[0.24em] text-brand shadow-glow">
             <span className="h-2.5 w-2.5 rounded-full bg-brand" />
-            Data Analyst Portfolio
+            Machine Learning?
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-5">
             <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Hi, I’m Uttam Aryal
+            <span className="block">Yo, I'm</span>
+            <span className="block mt-2">Uttam Aryal</span>
             </h1>
             <p className="text-xl font-semibold text-brand sm:text-2xl">
-              Data Analyst | Machine Learning Enthusiast | Python Developer
+              Data Science | Machine Learning | Python Developer
             </p>
             <p className="max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              I build data-driven solutions using Python, SQL, and Machine Learning.
+              I enjoy playing data using Python, SQL, and Machine Learning.
             </p>
           </div>
 

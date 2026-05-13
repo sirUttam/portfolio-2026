@@ -6,7 +6,7 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-sm font-semibold text-white">Uttam Aryal</p>
-          <p className="mt-1 text-sm text-slate-300">Data Analyst | Machine Learning Enthusiast | Python Developer</p>
+          <p className="mt-1 text-sm text-slate-300">Data Science | Machine Learning | Python Developer</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
           <a href="#" className="transition hover:text-brand">Home</a>
@@ -21,7 +21,7 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-6 max-w-7xl border-t border-white/10 px-6 pt-4 text-center text-sm text-slate-500">
-        © 2026 Uttam Aryal. Crafted for premium data and machine learning experiences.
+        © 2026 Uttam Aryal. Made with 99% AI, 1% "it works, don't ask how"
       </div>
     </footer>
   );

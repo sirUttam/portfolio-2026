@@ -5,8 +5,8 @@ function Projects() {
   return (
     <section id="projects" className="section-container">
       <div className="mb-12">
-        <span className="section-heading">Featured Projects</span>
-        <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">High-impact work built for performance and clarity.</h2>
+        <span className="section-heading">Projects</span>
+        <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Building simple things that make sense.</h2>
       </div>
 
       <div className="grid gap-6 xl:grid-cols-2">

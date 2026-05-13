@@ -2,37 +2,37 @@ export const journeyItems = [
   {
     id: 1,
     year: 'Start',
-    title: 'Frontend Development Start',
-    detail: 'Built clean responsive interfaces and polished brand-first web experiences.'
+    title: 'Started with Programming Basics',
+    detail: 'Learned C and C++ fundamentals and got introduced to problem solving in tech.'
   },
   {
     id: 2,
-    year: 'Experiment',
-    title: 'Built E-commerce Experiments',
-    detail: 'Developed product listings, search flows, and optimized checkout interactions.'
+    year: 'Web Dev',
+    title: 'Explored Web Development',
+    detail: 'Built web interfaces using JavaScript and spent time learning frontend development.'
   },
   {
     id: 3,
-    year: 'Transition',
-    title: 'Transition to Data Analytics',
-    detail: 'Shifted focus to structured data, SQL pipelines, and analytical storytelling.'
+    year: 'Realization',
+    title: 'Questioned My Path',
+    detail: 'Realized I wasn’t fully enjoying web development and started rethinking my direction in tech.'
   },
   {
     id: 4,
-    year: 'Machine Learning',
-    title: 'Machine Learning Projects',
-    detail: 'Delivered predictive models with validation and performance-driven features.'
+    year: 'Shift',
+    title: 'Moved to Data Science',
+    detail: 'Discovered data science with Python and decided to explore it further.'
   },
   {
     id: 5,
-    year: 'Internship',
-    title: 'Real-world Internship Experience',
-    detail: 'Collaborated on data products and actionable business intelligence dashboards.'
+    year: 'Growth',
+    title: 'Machine Learning Journey',
+    detail: 'Started working with datasets, cleaning data, visualization, and building ML models.'
   },
   {
     id: 6,
-    year: 'Growth',
-    title: 'Growth Toward Data/ML Engineering',
-    detail: 'Focused on scalable solutions, automation, and production-ready analytics.'
+    year: 'Now',
+    title: 'Clear Direction',
+    detail: 'Continuing to grow in data science and machine learning with a clearer understanding of my path.'
   }
 ];

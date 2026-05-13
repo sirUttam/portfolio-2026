@@ -157,11 +157,11 @@ function Contact() {
           <span className="section-heading">Contact</span>
 
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-            Let’s build something impactful together.
+          Let’s connect
           </h2>
 
           <p className="mt-6 text-slate-300">
-            Whether you have a project idea or opportunity, I’m ready to connect.
+                  Open to projects, ideas, or collaborations.
           </p>
 
           <div className="mt-10 space-y-4">

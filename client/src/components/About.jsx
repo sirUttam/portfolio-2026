@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: 'Experience Growth', value: 'Strong analytical and production-grade skill development.' },
-  { label: 'Passion for ML', value: 'Dedicated to practical machine learning that powers decisions.' },
-  { label: 'Problem Solving', value: 'Focused on real problems and data-driven solutions.' }
+  { label: 'Learning', value: 'Improving ML and development skills.' },
+  { label: 'Interest', value: 'Applying ML to real problems.' },
+  { label: 'Approach', value: 'Simple and practical problem-solving.' }
 ];
 
 function About() {
@@ -17,9 +17,9 @@ function About() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <span className="section-heading">About</span>
-          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">A developer focused on data analytics and machine learning.</h2>
+          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Working with data and ML… still learning, still confused sometimes.</h2>
           <p className="mt-6 max-w-xl text-lg text-slate-300 leading-8">
-            I’m a developer focused on data analytics and machine learning. I enjoy building practical solutions that solve real-world problems and continuously improve my technical depth.
+            A certified overthinker who enjoys data and machine learning...
           </p>
           <div className="mt-9 grid gap-4 sm:grid-cols-3">
             {stats.map((stat) => (
@@ -47,9 +47,9 @@ function About() {
             <div className="rounded-[2rem] bg-black/70 p-6 backdrop-blur-sm">
               <p className="text-sm uppercase tracking-[0.24em] text-brand">Profile</p>
               <div className="mt-5 space-y-4 text-lg leading-8 text-slate-100">
-                <p>Experienced in designing polished analytics experiences with an emphasis on clarity, reliability, and scalable data architecture.</p>
-                <p>Strong communicator who enjoys collaborating across product, engineering, and data teams to deliver measurable impact.</p>
-              </div>
+                <p>Making data less confusing, one project at a time.</p>
+                <p>Enjoys working with people and figuring things out together.</p>
+                 </div>
             </div>
           </div>
         </motion.div>

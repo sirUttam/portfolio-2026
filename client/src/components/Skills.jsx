@@ -40,7 +40,7 @@ function Skills() {
     <section id="skills" className="section-container">
       <div className="mb-12">
         <span className="section-heading">Skills</span>
-        <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Technical skills shaped for insight-driven products.</h2>
+        <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Just building useful stuffs with data.</h2>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
