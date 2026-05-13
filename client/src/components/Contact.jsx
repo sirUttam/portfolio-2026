@@ -52,7 +52,7 @@ function Contact() {
   const getContactApiUrl = () => {
     const baseUrl = import.meta.env.VITE_API_URL?.trim();
     if (!baseUrl) {
-      return "https://portfolio-2026-bccb.onrender.com/api/contact/send";
+      return "http://localhost:5001/api/contact/send";
     }
 
     const normalizedBaseUrl = baseUrl.replace(/\/+$/, "");
