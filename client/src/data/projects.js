@@ -2,41 +2,34 @@ export const projects = [
   {
     id: 1,
     title: 'Mental Health Prediction Project',
-    description: 'Machine learning system using Random Forest to predict mental health outcomes with clean preprocessing and validation.',
+    description: 'Developed a Random Forest-based ML model for predicting mental health outcomes with proper preprocessing and validation.',
     tags: ['Python', 'Scikit-learn', 'Random Forest', 'Pandas'],
-    github: 'https://github.com/sirUttam',
+    github: 'https://github.com/sirUttam/mental-health-ml-project',
     demo: 'https://check-your-mental-health.streamlit.app/'
   },
   {
     id: 2,
-    title: 'Regression Analysis Project',
-    description: 'Built predictive regression models with preprocessing pipelines, feature engineering, and evaluation dashboards.',
-    tags: ['Python', 'Regression', 'Data Analysis', 'SciPy'],
-    github: 'https://github.com/sirUttam',
+    title: 'Fuel Type Prediction',
+    description: 'Built a machine learning model using Random Forest to predict fuel type based on vehicle and engine parameters with proper preprocessing and validation.',
+    tags: ['Python', 'Classification', 'Scikit-learn', 'Pandas'],
+    github: 'https://github.com/sirUttam/fuel-type-prediction',
     demo: 'https://predict-fuel-type.streamlit.app/'
   },
   {
     id: 3,
-    title: 'Local Services Finder Nepal',
-    description: 'A platform connecting local Nepal services through searchable listings and category-based discovery.',
-    tags: ['React', 'Tailwind', 'Search UI', 'Responsive'],
-    github: 'https://github.com/sirUttam',
+    title: 'Frontend - Food Site WebApp',
+    description: 'Built a responsive food website with a modern UI to showcase menu items and provide a smooth browsing experience.',
+    tags: ['React', 'Tailwind', 'Javascript', 'Responsive'],
+    github: 'https://github.com/sirUttam/Food-Site',
     demo: 'https://food-site-beige.vercel.app/'
   },
   {
     id: 4,
-    title: 'Anime E-commerce Platform',
-    description: 'Online marketplace built with scalable frontend architecture and polished UI for niche product discovery.',
-    tags: ['React', 'UI/UX', 'Commerce', 'Animations'],
-    github: 'https://github.com/sirUttam',
+    title: 'Business Website',
+    description: 'Built a responsive business website with a modern UI to present services, showcase information, and improve online presence.',
+    tags: ['React', 'Tailwind', 'Javascript', 'Vite'],
+    github: 'https://github.com/sirUttam/Business-Website',
     demo: 'https://startbusinesswithuttam.vercel.app/'
-  },
-  {
-    id: 5,
-    title: 'Portfolio Dashboard',
-    description: 'Interactive data-driven analytics dashboard with visual insights and growth metrics for informed decision-making.',
-    tags: ['Data Viz', 'Charts', 'Dashboard', 'User Insights'],
-    github: 'https://github.com/sirUttam',
-    demo: '#'
   }
+ 
 ];
