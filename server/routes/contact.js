@@ -3,28 +3,33 @@ import nodemailer from "nodemailer";
 
 const router = express.Router();
 
-// create transporter once (good)
+/* =========================
+   TRANSPORTER (FIXED)
+========================= */
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST || "smtp.gmail.com",
-  port: Number(process.env.EMAIL_PORT || 465),
-  secure: process.env.EMAIL_SECURE !== "false",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
-  connectionTimeout: 10000,
-  greetingTimeout: 10000,
-  socketTimeout: 10000,
-  tls: {
-    rejectUnauthorized: false,
-  },
 });
 
-// verify SMTP (non-blocking log only)
-transporter.verify()
-  .then(() => console.log("[contact] SMTP ready"))
-  .catch((err) => console.error("[contact] SMTP error:", err.message));
+/* =========================
+   VERIFY SMTP (LOG ONLY)
+========================= */
+transporter.verify((error, success) => {
+  if (error) {
+    console.log("[contact] SMTP ERROR:", error.message);
+  } else {
+    console.log("[contact] SMTP READY");
+  }
+});
 
+/* =========================
+   CONTACT ROUTE
+========================= */
 router.post("/send", (req, res) => {
   console.log("[contact] request received");
 
@@ -50,29 +55,38 @@ router.post("/send", (req, res) => {
     });
   }
 
-  // ✅ IMPORTANT: respond immediately (NO WAIT)
+  /* =========================
+     SEND RESPONSE IMMEDIATELY
+     (NO TIMEOUT POSSIBLE)
+  ========================= */
   res.status(200).json({
     success: true,
     message: "Message received successfully."
   });
 
-  // send email in background (NO BLOCKING)
+  /* =========================
+     BACKGROUND EMAIL SENDING
+  ========================= */
   setImmediate(async () => {
     try {
-      await transporter.sendMail({
+      const info = await transporter.sendMail({
         from: process.env.EMAIL_USER,
         replyTo: trimmedEmail,
         to: process.env.EMAIL_USER,
         subject: `Portfolio Message from ${trimmedName}`,
         text: `From: ${trimmedName} <${trimmedEmail}>\n\n${trimmedMessage}`,
-        html: `<p><b>From:</b> ${trimmedName} &lt;${trimmedEmail}&gt;</p>
-               <p><b>Message:</b></p>
-               <p>${trimmedMessage}</p>`,
+        html: `
+          <h3>New Portfolio Message</h3>
+          <p><b>Name:</b> ${trimmedName}</p>
+          <p><b>Email:</b> ${trimmedEmail}</p>
+          <p><b>Message:</b></p>
+          <p>${trimmedMessage}</p>
+        `,
       });
 
-      console.log("[contact] email sent successfully");
+      console.log("[contact] EMAIL SENT:", info.messageId);
     } catch (err) {
-      console.error("[contact] email failed:", err.message);
+      console.log("[contact] EMAIL FAILED:", err.message);
     }
   });
 });
