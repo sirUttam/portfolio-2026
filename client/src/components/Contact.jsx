@@ -49,6 +49,18 @@ function Contact() {
     setToast({ visible: true, type, message });
   };
 
+  const getContactApiUrl = () => {
+    const baseUrl = import.meta.env.VITE_API_URL?.trim();
+    if (!baseUrl) {
+      return "https://portfolio-2026-bccb.onrender.com/api/contact/send";
+    }
+
+    const normalizedBaseUrl = baseUrl.replace(/\/+$/, "");
+    return normalizedBaseUrl.endsWith("/api/contact/send")
+      ? normalizedBaseUrl
+      : `${normalizedBaseUrl}/api/contact/send`;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -74,15 +86,12 @@ function Contact() {
     const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
 
     try {
-      const response = await fetch(
-        import.meta.env.VITE_API_URL || "https://portfolio-2026-bccb.onrender.com/api/contact/send",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-          signal: controller.signal,
-        }
-      );
+      const response = await fetch(getContactApiUrl(), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+        signal: controller.signal,
+      });
 
       clearTimeout(timeoutId);
 

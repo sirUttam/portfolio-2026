@@ -4,9 +4,9 @@ import nodemailer from "nodemailer";
 const router = express.Router();
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
+  host: process.env.EMAIL_HOST || "smtp.gmail.com",
+  port: Number(process.env.EMAIL_PORT || 465),
+  secure: process.env.EMAIL_SECURE !== "false",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -18,6 +18,10 @@ const transporter = nodemailer.createTransport({
     rejectUnauthorized: false,
   },
 });
+
+transporter.verify()
+  .then(() => console.log("[contact] SMTP transporter verified"))
+  .catch((err) => console.error("[contact] transporter verification failed:", err));
 
 router.post("/send", async (req, res) => {
   console.log("[contact] POST /send reached");
