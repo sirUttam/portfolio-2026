@@ -30,14 +30,3 @@ It includes a working contact form that sends emails using Gmail SMTP via Nodema
 - dotenv
 
 ---
-
-## Project Structure
-portfolio/
-│
-├── client/ (React frontend)
-├── server/ (Express backend)
-│ ├── routes/
-│ ├── middleware/
-│ └── server.js
-│
-└── README.md
