@@ -69,12 +69,22 @@ function Contact() {
 
     setFormState({ loading: true, success: '', error: '' });
 
+    // Create AbortController for timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+
     try {
-      const response = await fetch('/api/contact/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        import.meta.env.VITE_API_URL || "https://portfolio-2026-bccb.onrender.com/api/contact/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+          signal: controller.signal,
+        }
+      );
+
+      clearTimeout(timeoutId);
 
       const payload = await response.json().catch(() => null);
 
@@ -88,7 +98,13 @@ function Contact() {
       showToast('success', payload?.message || 'Message sent successfully.');
       setErrors(initialErrors);
     } catch (error) {
-      const message = error.message || 'Network error. Please try again.';
+      clearTimeout(timeoutId);
+      let message = 'Network error. Please try again.';
+      if (error.name === 'AbortError') {
+        message = 'Request timed out. Please try again.';
+      } else if (error.message) {
+        message = error.message;
+      }
       setFormState({ loading: false, success: '', error: message });
       showToast('error', message);
     }
