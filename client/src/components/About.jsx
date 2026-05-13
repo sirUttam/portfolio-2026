@@ -47,7 +47,6 @@ function About() {
             <div className="rounded-[2rem] bg-black/70 p-6 backdrop-blur-sm">
               <p className="text-sm uppercase tracking-[0.24em] text-brand">Profile</p>
               <div className="mt-5 space-y-4 text-lg leading-8 text-slate-100">
-                <p>Making data less confusing, one project at a time.</p>
                 <p>Enjoys working with people and figuring things out together.</p>
                  </div>
             </div>
