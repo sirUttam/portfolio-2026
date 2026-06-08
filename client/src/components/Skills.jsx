@@ -11,7 +11,8 @@ import {
   SiPython,
   SiReact,
   SiTailwindcss,
-  SiVisualstudiocode
+  SiVisualstudiocode,
+  SiFastapi
 } from 'react-icons/si';
 import { skillCategories } from '../data/skills';
 
@@ -32,7 +33,8 @@ const skillIcons = {
   Git: SiGit,
   'VS Code': SiVisualstudiocode,
   Jupyter: SiJupyter,
-  Figma: SiFigma
+  Figma: SiFigma,
+  FastAPI: SiFastapi
 };
 
 function Skills() {
