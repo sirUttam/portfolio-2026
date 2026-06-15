@@ -17,7 +17,7 @@ function About() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <span className="section-heading">About</span>
-          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Working with data and ML… still learning, still confused sometimes.</h2>
+          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Bsc CSIT graduate from Tribhuvan University. Deep interest in tech. Continuous learning dude.</h2>
           <p className="mt-6 max-w-xl text-lg text-slate-300 leading-8">
             A certified overthinker who enjoys data and machine learning...
           </p>
