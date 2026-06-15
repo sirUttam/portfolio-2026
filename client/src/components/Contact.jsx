@@ -169,13 +169,13 @@ function Contact() {
           </p>
 
           <div className="mt-10 space-y-4">
-            <a className="flex items-center gap-3 text-white" href="https://github.com">
+            <a className="flex items-center gap-3 text-white" href="https://github.com/sirUttam">
               <FaGithub /> GitHub
             </a>
-            <a className="flex items-center gap-3 text-white" href="https://linkedin.com">
+            <a className="flex items-center gap-3 text-white" href="https://www.linkedin.com/in/uttam-aryal-78a6bb324/">
               <FaLinkedin /> LinkedIn
             </a>
-            <a className="flex items-center gap-3 text-white" href="mailto:test@gmail.com">
+            <a className="flex items-center gap-3 text-white" href="mailto:aryaluttam365@gmail.com">
               <FaEnvelope /> Email
             </a>
           </div>
