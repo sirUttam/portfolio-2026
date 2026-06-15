@@ -53,19 +53,28 @@ function Contact() {
     setToast({ visible: true, type, message });
   };
 
-  // ---------------- API URL ----------------
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    'http://localhost:5001';
-
-  const CONTACT_ENDPOINT = `${API_URL}/api/contact/send`;
-
   // ---------------- HANDLE CHANGE ----------------
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     setErrors(initialErrors);
     setFormState({ loading: false, success: '', error: '' });
+  };
+
+  // ---------------- MOCK CONTACT HANDLER ----------------
+  // Simulates backend contact form submission with a small delay
+  const submitContactForm = async (data) => {
+    // Simulate network delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Mock successful response
+    return {
+      ok: true,
+      json: async () => ({
+        success: true,
+        message: 'Message received successfully.'
+      })
+    };
   };
 
   // ---------------- SUBMIT ----------------
@@ -91,12 +100,7 @@ function Contact() {
     const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
-      const response = await fetch(CONTACT_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-        signal: controller.signal
-      });
+      const response = await submitContactForm(formData);
 
       clearTimeout(timeout);
 
